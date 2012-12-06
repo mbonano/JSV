@@ -1,5 +1,58 @@
+
 JSV: JSON Schema Validator
 ==========================
+
+This is a custom extension of JSV which supports a few more validators and support for custom errors on each validation rule for easier integration into validation systems.
+
+## Example of new features
+
+A simple schema to validate a registration form:
+    
+    var schema = {
+        type: "object",
+        properties: {
+            "username" : {
+                type: "string",
+                format: "username",
+                minLength: 4,
+                _minLength: "Your username is too short",
+                maxLength: 30,
+                _maxLength: "Your username is too long",
+                required: true,
+                _required: "Please provide a username"
+            },
+            email : {
+                type: "string",
+                format: "email",
+                _format: "Please provide a valid email address",
+                required: true,
+                _required: "Please provide an email"
+            },
+            password_first : {
+                type: "string",
+                format: "password:strong",
+                required: true,
+                _required: "Please provide a password"
+            },
+            password_second : {
+                type: "string",
+                matches: "password_first",
+                _matches: "Your password does not match"
+            }
+        }
+    }
+
+Any property which starts with an underscore is an error message which will be displayed if that validation rule fails.
+This can be used to create simple and easy to understand error messages for validation.
+
+## New format validators
+
+*   email
+*   username
+*   password, password:medium, password:strong
+*   regex ( Simply replace the value of format with a regex of the form '/{pattern}/{modifiers}' )
+
+## Intro
 
 JSV is a JavaScript implementation of a extendable, fully compliant JSON Schema validator with the following features:
 
