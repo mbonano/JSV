@@ -1,20 +1,23 @@
 {
-	"name" : "JSV",
-	"version" : "4.0.2",
+	"name" : "jsvdraft4",
+	"version" : "4.1.0",
 	"description" : "A JavaScript implementation of a extendable, fully compliant JSON Schema validator.",
-	"homepage" : "http://github.com/garycourt/JSV",
+	"homepage" : "https://github.com/mbonano/JSV",
 	"author" : "Gary Court <gary.court@gmail.com>",
 	"licenses" : [
 		{
 			"type" : "FreeBSD",
-			"url" : "http://github.com/garycourt/JSV/raw/master/jsv.js"
+			"url" : "https://github.com/mbonano/JSV/lib/jsv.js"
 		}
 	],
 	"maintainers" : [
 		{
 			"name" : "Gary Court",
 			"email" : "gary.court@gmail.com"
-		}
+		},
+        {
+            "name" : "Mark Bonano"
+        }
 	],
 	"bugs" : {
 		"mail" : "gary.court@gmail.com",
